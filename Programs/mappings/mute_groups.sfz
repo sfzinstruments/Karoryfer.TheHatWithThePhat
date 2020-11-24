@@ -1,0 +1,122 @@
+<group> group=17
+off_by=17
+//The range which mutes splashes
+//Everything except pedal return noises, clutch raise noises and open
+//Footsplashes are the only articulation which mutes itself
+//Splash also mutes splash, but key=$SPLASHKEY is not part of this silence group
+//Instead splash regions themselves are marked with group=17 and off_by=17 also
+//Kind of a kludge, but keeps the silence from instantly muting the splash
+//while allowing a subsequent splash to mute the current splash
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY
+<region> key=$CLDROPKEY
+<region> key=$SQBOWKEY
+<region> key=$SQEDGEKEY
+<region> key=$SQBELLKEY
+<region> key=$VARBOWKEY locc4=$mg_open_lo hicc4=$mg_open_hi
+<region> key=$VAREDGEKEY locc4=$mg_open_lo hicc4=$mg_open_hi
+<region> key=$VARBELLKEY locc4=$mg_open_lo hicc4=$mg_open_hi
+
+//Group 16 (whcih has 15 as off_by and 5 polyphony) is not present here
+//Open hi-hats, clutch raise noises and pedal return noises are in it, but they don't mute anything
+
+<group> group=15
+off_by=14
+polyphony=5
+//The range which mutes open hi-hats, pedal return noises and clutch raise noises
+//Everything except pedal return noises and open
+//Just like the splash mute group, except the splash key is in this too
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY
+<region> key=$CLDROPKEY
+<region> key=$SQBOWKEY
+<region> key=$SQEDGEKEY
+<region> key=$SQBELLKEY
+<region> key=$VARBOWKEY locc4=$mg_open_lo hicc4=$mg_open_hi
+<region> key=$VAREDGEKEY locc4=$mg_open_lo hicc4=$mg_open_hi
+<region> key=$VARBELLKEY locc4=$mg_open_lo hicc4=$mg_open_hi
+<region> key=$SPLASHKEY
+
+<group> group=14
+off_by=13
+polyphony=5
+//The range which mutes sizzling
+//Everything except sizzling, open, and noises
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY
+<region> key=$CLDROPKEY
+<region> key=$SQBOWKEY
+<region> key=$SQEDGEKEY
+<region> key=$SQBELLKEY
+<region> key=$VARBOWKEY locc4=$mg_sz_lo hicc4=$mg_sz_hi
+<region> key=$VAREDGEKEY locc4=$mg_sz_lo hicc4=$mg_sz_hi
+<region> key=$VARBELLKEY locc4=$mg_sz_lo hicc4=$mg_sz_hi
+<region> key=$SPLASHKEY
+
+<group> group=13
+off_by=12
+polyphony=5
+//The range which mutes loosely closed
+//Everything except loosely closed, sizzling, open and noises
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY
+<region> key=$CLDROPKEY
+<region> key=$SQBOWKEY
+<region> key=$SQEDGEKEY
+<region> key=$SQBELLKEY
+<region> key=$VARBOWKEY locc4=$mg_lc_lo hicc4=$mg_lc_hi
+<region> key=$VAREDGEKEY locc4=$mg_lc_lo hicc4=$mg_lc_hi
+<region> key=$VARBELLKEY locc4=$mg_lc_lo hicc4=$mg_lc_hi
+<region> key=$SPLASHKEY
+
+<group> group=12
+off_by=11
+polyphony=5
+//The range which mutes closed hi-hats
+//Just extra tight, squashed, chik, clutch drop and splash
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY
+<region> key=$CLDROPKEY
+<region> key=$SQBOWKEY
+<region> key=$SQEDGEKEY
+<region> key=$SQBELLKEY
+<region> key=$VARBOWKEY locc4=$mg_cl_lo hicc4=$mg_cl_hi
+<region> key=$VAREDGEKEY locc4=$mg_cl_lo hicc4=$mg_cl_hi
+<region> key=$VARBELLKEY locc4=$mg_cl_lo hicc4=$mg_cl_hi
+<region> key=$SPLASHKEY
+
+<group> group=11
+off_by=10
+polyphony=5
+//The range which mutes tightly closed hi-hats
+//Just squashed, chik, clutch drop and splash
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY
+<region> key=$CLDROPKEY
+<region> key=$SQBOWKEY
+<region> key=$SQEDGEKEY
+<region> key=$SQBELLKEY
+<region> key=$SPLASHKEY
+
+<group> group=10
+polyphony=5
+//The range which mutes squashed hats - just foot chik, clutch drop and splash
+//Not muted by anything
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY
+<region> key=$CLDROPKEY
+<region> key=$SPLASHKEY

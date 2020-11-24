@@ -1,0 +1,18 @@
+//Curves for dryness control
+
+<curve>curve_index=11
+v000=0
+v063=1
+v127=1
+
+<curve>curve_index=12
+v000=0
+v064=0
+v127=0.75
+
+//For tighten
+
+<curve>curve_index=13
+v000=0
+v064=1
+v127=1

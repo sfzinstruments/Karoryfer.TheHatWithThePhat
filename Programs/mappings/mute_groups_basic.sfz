@@ -1,0 +1,71 @@
+//Group 16 (whcih has 15 as off_by and 5 polyphony) is not present here
+//Open hi-hats, clutch raise noises and pedal return noises are in it, but they don't mute anything
+
+<group> group=15
+off_by=14
+polyphony=5
+//The range which mutes open hi-hats, pedal return noises and clutch raise noises
+//Everything except pedal return noises and open
+//Just like the splash mute group, except the splash key is in this too
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY
+<region> key=$SQBOWKEY
+<region> key=$VARBOWKEY locc4=$mg_open_lo hicc4=$mg_open_hi
+
+<group> group=14
+off_by=13
+polyphony=5
+//The range which mutes sizzling
+//Everything except sizzling, open, and noises
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY
+<region> key=$SQBOWKEY
+<region> key=$VARBOWKEY locc4=$mg_sz_lo hicc4=$mg_sz_hi
+
+<group> group=13
+off_by=12
+polyphony=5
+//The range which mutes loosely closed
+//Everything except loosely closed, sizzling, open and noises
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY
+<region> key=$SQBOWKEY
+<region> key=$VARBOWKEY locc4=$mg_lc_lo hicc4=$mg_lc_hi
+
+<group> group=12
+off_by=11
+polyphony=5
+//The range which mutes closed hi-hats
+//Just extra tight, squashed, chik, clutch drop and splash
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY
+<region> key=$SQBOWKEY
+<region> key=$VARBOWKEY locc4=$mg_cl_lo hicc4=$mg_cl_hi
+
+<group> group=11
+off_by=10
+polyphony=5
+//The range which mutes tightly closed hi-hats
+//Just squashed, chik, clutch drop and splash
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY
+<region> key=$SQBOWKEY
+
+<group> group=10
+polyphony=5
+//The range which mutes squashed hats - just foot chik, clutch drop and splash
+//Not muted by anything
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region> key=$CHIKKEY

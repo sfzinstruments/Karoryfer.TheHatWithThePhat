@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<Key>B979F7155AF5ABED41FD17DF310A49D65608005DE9CE733927D16F81FAEC22CE8427D9195688D2BDA216BC38314BD6CA7997F3F25388C4B7C982F3651EF3438D4A4B7AC33834CC633D900C6137C1DDFFE433C23B430D5DEC3925FA4F2AF1A7D7827FD9255143FF9F5A0B035EA38CFC2087C1803914B3CFD02167550A97E6374069508760328ED03824B24D1CBB3DC13EEFCEAD650A9D07CAED3C2F720F00773D2AC0138DB0D15E3AC0F5B54400A9A87DA74F07B3C405EDECEC8D7C8342A43DB8961FA65E0587EBE1BB0A67414B6BBF47DB324A840EE8FB7793E3C884360A0FD340C2C546E268A588E6E482A5844459F90E5351DE9619C828CA71099C5F1D817F</Key>
+<AriaBank id="2544" name="The Hat With The Phat" vendor="Karoryfer" product="The Hat With The Phat" version="1000" >
+
+	<Define name="$sample_dir" value="../Samples"/>
+	
+	<!-- branding for Aria Player and sforzando UIs -->
+	<AriaGUI path="GUI/aria_info.xml"  target="*ARIA_INFO" />
+
+    <AriaProgram  name="01 - 20 inch hi-hat complete"                gui="GUI/01-complete.xml">
+    <AriaElement  path="Programs/01-complete.sfz"/>
+    </AriaProgram>
+
+    <AriaProgram  name="02 - 20 inch hi-hat basic"                gui="GUI/02-basic.xml">
+    <AriaElement  path="Programs/02-basic.sfz"/>
+    </AriaProgram>
+
+</AriaBank>

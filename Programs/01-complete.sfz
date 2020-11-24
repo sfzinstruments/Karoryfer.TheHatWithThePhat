@@ -1,0 +1,763 @@
+<control>
+//Keymap goes here
+#define $SQBOWKEY 42
+#define $CHIKKEY 44
+#define $VARBOWKEY 46
+#define $SQEDGEKEY 54
+#define $SPLASHKEY 56
+#define $VAREDGEKEY 58
+#define $SQBELLKEY 66
+#define $RETURNKEY 68
+#define $VARBELLKEY 70
+#define $CLDROPKEY 78
+#define $CLRAISEKEY 80
+
+//Default for keyboard/sequencing use
+//E-kit use would be 0
+#define $ht_lo_hi_init 127
+//Hi-hat CC ranges - order for keyboard/sequencing use
+//E-kit pedal should be backwards
+#define $ht_xt_lo 0
+#define $ht_xt_hi 25
+#define $ht_cl_lo 26
+#define $ht_cl_hi 51
+#define $ht_lc_lo 52
+#define $ht_lc_hi 76
+#define $ht_sz_lo 77
+#define $ht_sz_hi 102
+#define $ht_open_lo 103
+#define $ht_open_hi 127
+//And repeated for mute groups
+#define $mg_open_lo 0
+#define $mg_open_hi 102
+#define $mg_sz_lo 0
+#define $mg_sz_hi 76
+#define $mg_lc_lo 0
+#define $mg_lc_hi 51
+#define $mg_cl_lo 0
+#define $mg_cl_hi 25
+
+
+label_cc4=Hi-hat position
+label_cc80=Main volume
+label_cc81=Down volume
+label_cc83=Tuning
+label_cc96=Open dryness
+label_cc98=Closed tightness
+
+set_cc4=$ht_lo_hi_init
+set_cc80=127
+set_cc83=63.5
+
+<global>
+seq_length=4
+loop_mode=one_shot
+off_mode=normal
+ampeg_release=0.2 //Default for hi-hat muting
+bend_up=100
+bend_down=100
+amp_velcurve_1=0.4
+tune_cc83=1200
+tune_curvecc83=1
+ampeg_sustain=100
+ampeg_sustain_oncc98=-100 //For tighten control, set to 0 for stuff where the dryness control applies
+ampeg_sustain_curvecc98=13
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$SQBOWKEY
+group=11
+off_by=10
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.08
+ampeg_decay_oncc98=-1.07
+#include "mappings/hat_20_squash_bow_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$CHIKKEY
+group=10
+polyphony=5
+ampeg_hold=0.3
+ampeg_hold_oncc98=-0.2
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.37
+#include "mappings/hat_20_chik_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VARBOWKEY
+locc4=$ht_xt_lo
+hicc4=$ht_xt_hi
+group=12
+off_by=11
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.37
+#include "mappings/hat_20_xtight_bow_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VARBOWKEY
+locc4=$ht_cl_lo
+hicc4=$ht_cl_hi
+group=13
+off_by=12
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.36
+#include "mappings/hat_20_closed_bow_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VARBOWKEY
+locc4=$ht_lc_lo
+hicc4=$ht_lc_hi
+group=14
+off_by=13
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=3.08
+ampeg_decay_oncc98=-3.05
+#include "mappings/hat_20_loose_bow_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VARBOWKEY
+locc4=$ht_sz_lo
+hicc4=$ht_sz_hi
+group=15
+off_by=14
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=3.08
+ampeg_decay_oncc98=-3.03
+#include "mappings/hat_20_sizz_bow_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VARBOWKEY
+locc4=$ht_open_lo
+hicc4=$ht_open_hi
+group=16
+off_by=15
+polyphony=5
+ampeg_hold=0.1
+ampeg_decay=13
+ampeg_decay_oncc96=-13
+ampeg_sustain_oncc98=0
+ampeg_sustain_oncc96=-100
+ampeg_sustain_curvecc96=11
+ampeg_decay_curvecc96=12
+#include "mappings/hat_20_open_bow_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$SQEDGEKEY
+group=11
+off_by=10
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.08
+ampeg_decay_oncc98=-1.07
+#include "mappings/hat_20_squash_edge_map.sfz"
+
+<master>
+amplitude_oncc80=10
+locc80=1
+key=$SPLASHKEY
+group=17
+off_by=17
+ampeg_hold=0.1
+ampeg_decay=13
+ampeg_decay_oncc96=-13
+ampeg_sustain_oncc98=0
+ampeg_sustain_oncc96=-100
+ampeg_sustain_curvecc96=11
+ampeg_decay_curvecc96=12
+#include "mappings/hat_20_splash_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VAREDGEKEY
+locc4=$ht_xt_lo
+hicc4=$ht_xt_hi
+group=12
+off_by=11
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.37
+#include "mappings/hat_20_xtight_edge_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VAREDGEKEY
+locc4=$ht_cl_lo
+hicc4=$ht_cl_hi
+group=13
+off_by=12
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.36
+#include "mappings/hat_20_closed_edge_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VAREDGEKEY
+locc4=$ht_lc_lo
+hicc4=$ht_lc_hi
+group=14
+off_by=13
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=4.08
+ampeg_decay_oncc98=-4.05
+#include "mappings/hat_20_loose_edge_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VAREDGEKEY
+locc4=$ht_sz_lo
+hicc4=$ht_sz_hi
+group=15
+off_by=14
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=4.08
+ampeg_decay_oncc98=-4.04
+#include "mappings/hat_20_sizz_edge_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VAREDGEKEY
+locc4=$ht_open_lo
+hicc4=$ht_open_hi
+group=16
+off_by=15
+polyphony=5
+ampeg_hold=0.1
+ampeg_decay=18
+ampeg_decay_oncc96=-18
+ampeg_sustain_oncc98=0
+ampeg_sustain_oncc96=-100
+ampeg_sustain_curvecc96=11
+ampeg_decay_curvecc96=12
+#include "mappings/hat_20_open_edge_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$SQBELLKEY
+group=11
+off_by=10
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.08
+ampeg_decay_oncc98=-1.07
+#include "mappings/hat_20_squash_bell_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$RETURNKEY
+group=16
+off_by=15
+polyphony=5
+ampeg_hold=0.1
+ampeg_decay=9
+ampeg_decay_oncc96=-9
+ampeg_sustain_oncc98=0
+ampeg_sustain_oncc96=-100
+ampeg_sustain_curvecc96=11
+ampeg_decay_curvecc96=12
+#include "mappings/hat_20_return_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VARBELLKEY
+locc4=$ht_xt_lo
+hicc4=$ht_xt_hi
+group=12
+off_by=11
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.37
+#include "mappings/hat_20_xtight_bell_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VARBELLKEY
+locc4=$ht_cl_lo
+hicc4=$ht_cl_hi
+group=13
+off_by=12
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.37
+#include "mappings/hat_20_closed_bell_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VARBELLKEY
+locc4=$ht_lc_lo
+hicc4=$ht_lc_hi
+group=14
+off_by=13
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=3.08
+ampeg_decay_oncc98=-3.05
+#include "mappings/hat_20_loose_bell_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VARBELLKEY
+locc4=$ht_sz_lo
+hicc4=$ht_sz_hi
+group=15
+off_by=14
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=3.08
+ampeg_decay_oncc98=-3.04
+#include "mappings/hat_20_sizz_bell_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$VARBELLKEY
+locc4=$ht_open_lo
+hicc4=$ht_open_hi
+group=16
+off_by=15
+polyphony=5
+ampeg_hold=0.1
+ampeg_decay=11
+ampeg_decay_oncc96=-11
+ampeg_sustain_oncc98=0
+ampeg_sustain_oncc96=-100
+ampeg_sustain_curvecc96=11
+ampeg_decay_curvecc96=12
+#include "mappings/hat_20_open_bell_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$CLDROPKEY
+group=10
+polyphony=5
+ampeg_hold=0.3
+ampeg_hold_oncc98=-0.2
+ampeg_decay=1.08
+ampeg_decay_oncc98=-1.07
+#include "mappings/hat_20_drop_map.sfz"
+
+<master>
+amplitude_oncc80=100
+locc80=1
+key=$CLRAISEKEY
+group=16
+off_by=15
+polyphony=5
+ampeg_hold=0.1
+ampeg_decay=4
+ampeg_decay_oncc96=-4
+ampeg_sustain_oncc98=0
+ampeg_sustain_oncc96=-100
+ampeg_sustain_curvecc96=11
+ampeg_decay_curvecc96=12
+#include "mappings/hat_20_raise_map.sfz"
+
+//Maps for the pitch-shifted samples
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$SQBOWKEY
+group=21
+off_by=20
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.08
+ampeg_decay_oncc98=-1.07
+#include "mappings/hat_20_squash_bow_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$CHIKKEY
+group=20
+polyphony=5
+ampeg_hold=0.3
+ampeg_hold_oncc98=-0.2
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.37
+#include "mappings/hat_20_chik_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VARBOWKEY
+locc4=$ht_xt_lo
+hicc4=$ht_xt_hi
+group=22
+off_by=21
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.37
+#include "mappings/hat_20_xtight_bow_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VARBOWKEY
+locc4=$ht_cl_lo
+hicc4=$ht_cl_hi
+group=23
+off_by=22
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.36
+#include "mappings/hat_20_closed_bow_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VARBOWKEY
+locc4=$ht_lc_lo
+hicc4=$ht_lc_hi
+group=24
+off_by=23
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=3.08
+ampeg_decay_oncc98=-3.05
+#include "mappings/hat_20_loose_bow_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VARBOWKEY
+locc4=$ht_sz_lo
+hicc4=$ht_sz_hi
+group=25
+off_by=24
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=3.08
+ampeg_decay_oncc98=-3.03
+#include "mappings/hat_20_sizz_bow_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VARBOWKEY
+locc4=$ht_open_lo
+hicc4=$ht_open_hi
+group=26
+off_by=25
+polyphony=5
+ampeg_hold=0.1
+ampeg_decay=13
+ampeg_decay_oncc96=-13
+ampeg_sustain_oncc98=0
+ampeg_sustain_oncc96=-100
+ampeg_sustain_curvecc96=11
+ampeg_decay_curvecc96=12
+#include "mappings/hat_20_open_bow_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$SQEDGEKEY
+group=21
+off_by=20
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.08
+ampeg_decay_oncc98=-1.07
+#include "mappings/hat_20_squash_edge_down.sfz"
+
+<master>
+amplitude_oncc81=10
+locc81=1
+key=$SPLASHKEY
+group=27
+off_by=27
+ampeg_hold=0.1
+ampeg_decay=13
+ampeg_decay_oncc96=-13
+ampeg_sustain_oncc98=0
+ampeg_sustain_oncc96=-100
+ampeg_sustain_curvecc96=11
+ampeg_decay_curvecc96=12
+#include "mappings/hat_20_splash_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VAREDGEKEY
+locc4=$ht_xt_lo
+hicc4=$ht_xt_hi
+group=22
+off_by=21
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.37
+#include "mappings/hat_20_xtight_edge_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VAREDGEKEY
+locc4=$ht_cl_lo
+hicc4=$ht_cl_hi
+group=23
+off_by=22
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.36
+#include "mappings/hat_20_closed_edge_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VAREDGEKEY
+locc4=$ht_lc_lo
+hicc4=$ht_lc_hi
+group=24
+off_by=23
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=4.08
+ampeg_decay_oncc98=-4.05
+#include "mappings/hat_20_loose_edge_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VAREDGEKEY
+locc4=$ht_sz_lo
+hicc4=$ht_sz_hi
+group=25
+off_by=24
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=4.08
+ampeg_decay_oncc98=-4.04
+#include "mappings/hat_20_sizz_edge_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VAREDGEKEY
+locc4=$ht_open_lo
+hicc4=$ht_open_hi
+group=26
+off_by=25
+polyphony=5
+ampeg_hold=0.1
+ampeg_decay=18
+ampeg_decay_oncc96=-18
+ampeg_sustain_oncc98=0
+ampeg_sustain_oncc96=-100
+ampeg_sustain_curvecc96=11
+ampeg_decay_curvecc96=12
+#include "mappings/hat_20_open_edge_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$SQBELLKEY
+group=21
+off_by=20
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.08
+ampeg_decay_oncc98=-1.07
+#include "mappings/hat_20_squash_bell_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$RETURNKEY
+group=26
+off_by=25
+polyphony=5
+ampeg_hold=0.1
+ampeg_decay=9
+ampeg_decay_oncc96=-9
+ampeg_sustain_oncc98=0
+ampeg_sustain_oncc96=-100
+ampeg_sustain_curvecc96=11
+ampeg_decay_curvecc96=12
+#include "mappings/hat_20_return_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VARBELLKEY
+locc4=$ht_xt_lo
+hicc4=$ht_xt_hi
+group=22
+off_by=21
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.37
+#include "mappings/hat_20_xtight_bell_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VARBELLKEY
+locc4=$ht_cl_lo
+hicc4=$ht_cl_hi
+group=23
+off_by=22
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=1.38
+ampeg_decay_oncc98=-1.37
+#include "mappings/hat_20_closed_bell_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VARBELLKEY
+locc4=$ht_lc_lo
+hicc4=$ht_lc_hi
+group=24
+off_by=23
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=3.08
+ampeg_decay_oncc98=-3.05
+#include "mappings/hat_20_loose_bell_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VARBELLKEY
+locc4=$ht_sz_lo
+hicc4=$ht_sz_hi
+group=25
+off_by=24
+polyphony=5
+ampeg_hold=0.2
+ampeg_hold_oncc98=-0.19
+ampeg_decay=3.08
+ampeg_decay_oncc98=-3.04
+#include "mappings/hat_20_sizz_bell_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$VARBELLKEY
+locc4=$ht_open_lo
+hicc4=$ht_open_hi
+group=26
+off_by=25
+polyphony=5
+ampeg_hold=0.1
+ampeg_decay=11
+ampeg_decay_oncc96=-11
+ampeg_sustain_oncc98=0
+ampeg_sustain_oncc96=-100
+ampeg_sustain_curvecc96=11
+ampeg_decay_curvecc96=12
+#include "mappings/hat_20_open_bell_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$CLDROPKEY
+group=20
+polyphony=5
+ampeg_hold=0.3
+ampeg_hold_oncc98=-0.2
+ampeg_decay=1.08
+ampeg_decay_oncc98=-1.07
+#include "mappings/hat_20_drop_down.sfz"
+
+<master>
+amplitude_oncc81=100
+locc81=1
+key=$CLRAISEKEY
+group=26
+off_by=25
+polyphony=5
+ampeg_hold=0.1
+ampeg_decay=4
+ampeg_decay_oncc96=-4
+ampeg_sustain_oncc98=0
+ampeg_sustain_oncc96=-100
+ampeg_sustain_curvecc96=11
+ampeg_decay_curvecc96=12
+#include "mappings/hat_20_raise_down.sfz"
+
+//And the mute groups of silence
+
+<master>
+seq_length=1
+#include "mappings/mute_groups.sfz"
+#include "mappings/mute_groups_down.sfz"
+
+//Curves for the dryness
+#include "mappings/curves.sfz"
