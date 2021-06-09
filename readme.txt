@@ -30,6 +30,6 @@ Down volume is the volume of an extra copy of samples pitched an octave down (bu
 Dryness shortens the open, splash, return and raise techniques, to emulate dry (at max extremely dry and probably cracked) cymbals.
 Tightness shortens all other samples, and at max leaves only a short glitch.
 
-Thanks to Micha³ Wêglowski for loaning the rides (and having multiple ride cymbals of the same size in the first place, which made it much easier than borrowing two cymbals from two drummers), and Adam Sobolewski for leaving a hi-hat stand at my house.
+Thanks to MichaÅ‚ WÃªglowski for loaning the rides (and having multiple ride cymbals of the same size in the first place, which made it much easier than borrowing two cymbals from two drummers), and Adam Sobolewski for leaving a hi-hat stand at my house.
 
 Royalty-free for all commercial and non-commercial use. Copyright 2020 Karoryfer Lecolds.
